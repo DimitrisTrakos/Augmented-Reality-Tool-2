@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <title>Oblique Surface</title>  
+
+  <script  src="src/pixpipe.js"></script>  
+  <script  src="src/getTextFile.js"></script>
+  <script type="module" src="/css/main.css"></script>   
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <!--<link rel="stylesheet" href="css/style.css">-->
+
+</head>
+<body>
+ 
+  <!-- This is a <div> element with an id attribute set to "info." 
+    It acts as a container for the following elements.-->
+    <div id="overlay-content">
+      <div id="range-container">
+        <label for="range-scale" id="label-scale">Scale(Min:0.0001 Max:0.01):</label>
+        <input type="range" min="0.0005" max="0.008" step="0.0001" value="0.001" id="range-scale">
+    </div>
+    <select id="clip-options">
+        <option value="x">Clip on X</option>
+        <option value="y">Clip on Y</option>
+        <option value="z">Clip on Z</option>
+        <input type="range" step="0.05" id="range-clip">
+  
+    </select>
+      </div>
+  <div id="info"> 
+
+    
+
+    <!-- This is a <span> element with an id attribute set to "fileInfo." 
+      Initially, it appears to be empty, but it can be dynamically updated 
+      with information or text content using JavaScript. -->
+    <span id="fileInfo"></span>
+    
+    <div id="fileOpener">
+   
+   
+  		Open a structural volume file (NIfTI, Minc2, Pixp)
+
+      <!-- This is an <input> element of type "file" with an id attribute 
+        set to "fileInput." It creates a file input control that allows 
+        the user to select files from their local device when clicked. 
+        This is typically used for file upload functionality.-->
+  		<input type="file" id="fileInput">
+
+      <!--This is a line break <br> element. It adds a line break,
+         creating some separation between the "fileOpener" content 
+         and any content that may come after it.-->
+      <br>
+  	</div>
+
+
+    <div id="surfaceOpener" >
+  		Open a MNI model surface file
+  		<input type="file" id="fileInputSurface">
+      <br>
+
+  	</div>
+
+        
+  </div>
+ 
+
+
+  
+  <script type="module" src="src/main.js">
+  </script>
+
+</body>
+</html>
