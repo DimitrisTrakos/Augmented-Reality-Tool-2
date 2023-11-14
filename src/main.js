@@ -9,8 +9,14 @@ import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
 import { convertArray } from "three/src/animation/AnimationUtils";
 import * as dat from 'dat.gui';
+import getTextFile from "./getTextFile";
+import * as pixpipe from './pixpipe';
+
+// import * as Pixpipe from './pixpipe';
+
 
 // parameters
+
 const fileReader = new FileReader();
 let fileInput = document.getElementById("fileInput"); // load file after input using the html button
 let file2Buff = new pixpipe.FileToArrayBufferReader();
@@ -192,8 +198,12 @@ fileInputSurface.addEventListener("change", function (e) {
   let mesh;
 
   if (file) {
-    const loader = new GLTFLoader();
-    loader.load("../data/" + file.name, (glb) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+        const fileURL = reader.result;
+        const loader = new GLTFLoader();
+        loader.load(fileURL, (glb) => {
       mesh = glb.scene;
 
       // enable the mesh to be cliped
@@ -221,6 +231,7 @@ fileInputSurface.addEventListener("change", function (e) {
       updateClipPlane();
       render();
     });
+  };
   }
 });
 
@@ -608,7 +619,6 @@ inputScale.addEventListener("input", (e) => {
 function render(timestamp, frame) {
   if (renderer.xr.isPresenting) {
     container.visible=containerVisible
-    container.rotation.y+=0.005
     updateClipPlane()
     document.getElementById("clip-options").style.visibility = "visible";
     document.getElementById("range-scale").style.visibility = "visible";

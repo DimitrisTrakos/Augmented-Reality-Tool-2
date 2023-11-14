@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "dat.gui": "^0.7.9",
+    "pixpipe": "^0.2.0",
     "three": "^0.157.0",
     "webxr-polyfill": "^2.0.3"
   }

@@ -24,3 +24,5 @@ xhr.onerror = function(e) {
 
 xhr.send();
 };
+
+export default getTextFile

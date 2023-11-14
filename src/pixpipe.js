@@ -1,8 +1,4 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.pixpipe = global.pixpipe || {})));
-}(this, (function (exports) { 'use strict';
+
 
 /*
 * Author   Jonathan Lurie - http://me.jonahanlurie.fr
@@ -21723,38 +21719,36 @@ class Image3DToMosaicFilter extends Filter{
 
 } /* END of class Image3DToMosaicFilter */
 
-exports.PixpipeObject = PixpipeObject;
-exports.Filter = Filter;
-exports.Image2D = Image2D;
-exports.Image3D = Image3D;
-exports.ImageToImageFilter = ImageToImageFilter;
-exports.MniVolume = MniVolume;
-exports.CanvasImageWriter = CanvasImageWriter;
-exports.UrlImageReader = UrlImageReader;
-exports.FileImageReader = FileImageReader;
-exports.FileToArrayBufferReader = FileToArrayBufferReader;
-exports.UrlToArrayBufferReader = UrlToArrayBufferReader;
-exports.Minc2Decoder = Minc2Decoder;
-exports.NiftiDecoder = NiftiDecoder;
-exports.PixpEncoder = PixpEncoder;
-exports.PixpDecoder = PixpDecoder;
-exports.Image3DGenericDecoder = Image3DGenericDecoder;
-exports.TiffDecoder = TiffDecoder;
-exports.ForEachPixelImageFilter = ForEachPixelImageFilter;
-exports.SpectralScaleImageFilter = SpectralScaleImageFilter;
-exports.ImageBlendExpressionFilter = ImageBlendExpressionFilter;
-exports.SpatialConvolutionFilter = SpatialConvolutionFilter;
-exports.MultiplyImageFilter = MultiplyImageFilter;
-exports.SimpleThresholdFilter = SimpleThresholdFilter;
-exports.ImageDerivativeFilter = ImageDerivativeFilter;
-exports.GradientImageFilter = GradientImageFilter;
-exports.NormalizeImageFilter = NormalizeImageFilter;
-exports.AngleToHueWheelHelper = AngleToHueWheelHelper;
-exports.Image3DToMosaicFilter = Image3DToMosaicFilter;
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
 //# sourceMappingURL=pixpipe.js.map
-
+export {
+  PixpipeObject,
+  Filter,
+  Image2D,
+  Image3D,
+  ImageToImageFilter,
+  MniVolume,
+  CanvasImageWriter,
+  UrlImageReader,
+  FileImageReader,
+  FileToArrayBufferReader,
+  UrlToArrayBufferReader,
+  Minc2Decoder,
+  NiftiDecoder,
+  PixpEncoder,
+  PixpDecoder,
+  Image3DGenericDecoder,
+  TiffDecoder,
+  ForEachPixelImageFilter,
+  SpectralScaleImageFilter,
+  ImageBlendExpressionFilter,
+  SpatialConvolutionFilter,
+  MultiplyImageFilter,
+  SimpleThresholdFilter,
+  ImageDerivativeFilter,
+  GradientImageFilter,
+  NormalizeImageFilter,
+  AngleToHueWheelHelper,
+  Image3DToMosaicFilter
+};
 
